@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="collectioninjection" class="educating_spring.collection_injection.Collectioninjection">
+        <property name="documentList">
+
+            <!--список- может вкл одинаковые значения-->
+            <list>
+                <value>132</value>
+                <value>132</value>
+                <value>133</value>
+                <value>134</value>
+                <value>135</value>
+            </list>
+        </property>
+
+        <property name="documentSet">
+
+            <!--множество-только уникальные значения -->
+            <set>
+                <value>132</value>
+                <value>133</value>
+                <value>134</value>
+                <value>135</value>
+            </set>
+        </property>
+
+        <property name="documentMap">
+
+            <!--карта -ключ, значение (словарь)  имя и значение могут иметь любой тип, кроме примитива – Map)-->
+            <map>
+                <entry key="1" value="132"/>
+                <entry key="2" value="133"/>
+                <entry key="3" value="134"/>
+                <entry key="4" value="135"/>
+            </map>
+        </property>
+
+        <property name="documentProp">
+            <!--карта - имя и значение должны быть String-->
+            <props>
+                <prop key="one">one</prop>
+                <prop key="two">two</prop>
+                <prop key="three">three</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- если в файле много бинов, и хотелось бы использовать одни методы инициализации и уничтожения бинов , то можно использовать
+    атрибуты default-init-method и default-destroy-method-->
+
+
+    <bean id="message_singleton" class="educating_spring.Message" init-method="beanInit" destroy-method="beanDestroy">
+        <constructor-arg value="Hi :P"/>
+    </bean>
+
+    <bean class="educating_spring.beanPostProcessor.BeanPostProcessorImpl"/>
+
+
+    <!--установка методо инициализации и уничтожения для каждого бина по отдельности
+    по умолчанию область видимости(scope) бинов singleton(экземпляр бина создается один раз, и далее ерется из кеша)
+    <bean id="message_singleton" class="educating_spring.Message" init-method="beanInit" destroy-method="beanDestroy">
+        <constructor-arg value=""/>
+    </bean>
+    при каждом запросе бина создается новый экземпляр
+    <bean id="message_prototype" class="educating_spring.Message" scope="prototype">
+        <constructor-arg value=""/>
+    </bean> -->
+
+</beans>

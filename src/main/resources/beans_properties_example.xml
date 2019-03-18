@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- обычный бин-->
+    <bean id="normal_bean" class="educating_spring.Message">
+        <constructor-arg value="Hi world"/>
+    </bean>
+    <!--бин c ленивой инициализацией. Т.е создаст экземпляр бина при первом запросе, а не при запуске приложения-->
+    <bean id="lazy" class="educating_spring.Message" lazy-init="true">
+        <constructor-arg value="Hi world"/>
+    </bean>
+
+    <!--бин c определение метода инициализации бина-->
+    <bean id="init" class="educating_spring.Message" init-method="getMessage">
+        <constructor-arg value="Hi world"/>
+    </bean>
+
+    <!--бин с определением метода уничтожения бина-->
+    <bean id="destroy_bean" class="educating_spring.Message" destroy-method="getMessage">
+        <constructor-arg value="Hi world"/>
+    </bean>
+</beans>

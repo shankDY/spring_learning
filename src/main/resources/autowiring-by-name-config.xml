@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- в данном случаи вкл автосвязывание по имени. И Здесь имя свойства в классе Exam совпадает с именем бина -->
+    <bean id="examen" class="educating_spring.autowiring_bean.Exam" autowire="byName">
+        <property name="subject" value="Computer Security"/>
+    </bean>
+
+    <bean id="answerChecker" class="educating_spring.autowiring_bean.AnswerChecker"/>
+</beans>

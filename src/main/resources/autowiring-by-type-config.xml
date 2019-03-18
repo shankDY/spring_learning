@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- в данном случаи вкл автосвязывание по типу. И Здесь тип свойства answerChecker в классе Exam совпадает
+    с типом бина answerChecker(тип AnswerChecker) -->
+    <bean id="bytype" class="educating_spring.autowiring_bean.Exam" autowire="byType">
+        <property name="subject" value="Computer Security"/>
+    </bean>
+
+    <bean id="answerChecker" class="educating_spring.autowiring_bean.AnswerChecker"/>
+</beans>

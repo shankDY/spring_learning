@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+default-init-method="beanInit"
+default-destroy-method="beanDestroy">
+
+    <bean id="message" class="educating_spring.Message">
+        <constructor-arg value="Hi :P"/>
+    </bean>
+
+    <bean id="message_To_you" class="educating_spring.inheritance.MessageToYou" parent="message">
+        <constructor-arg  value="Hi bro"/>
+    </bean>
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--вкл конфигурирование по аннотациям(поумолчанию откл)-->
+    <context:annotation-config/>
+
+    <!--бин в котором указан какой бин необходимо использовать-->
+    <bean id="position" class="educating_spring.annotations.qualifier.Position"/>
+
+    <bean id="android_developer" class="educating_spring.annotations.qualifier.Developer">
+        <constructor-arg name="name" value="Alex"/>
+        <constructor-arg name="experience" value="2"/>
+        <constructor-arg name="specialty" value="Android developer"/>
+    </bean>
+
+    <bean id="java_developer" class="educating_spring.annotations.qualifier.Developer">
+        <constructor-arg name="name" value="Boby"/>
+        <constructor-arg name="experience" value="1"/>
+        <constructor-arg name="specialty" value="Java developer"/>
+    </bean>
+</beans>
