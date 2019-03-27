@@ -10,4 +10,5 @@ public class MessageConfigure {
     public Message printMessage(){
         return new Message();
     }
+
 }
